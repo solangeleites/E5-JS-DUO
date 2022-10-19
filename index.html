@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/iconos/nucbazapi.png"/>
+    <link rel="stylesheet" href="style.css">
+    <title>NUCBAZAPPI</title>
+</head>
+<body>
+    
+<!-- nav -->
+ <nav class="nav">
+    <div class="nav__logo">
+        <a href="#home">
+            <img src="assets/iconos/nucbazapi.png" alt="logo">
+        </a>
+    </div>
+    <div class="nav__options">
+        <a href="#" class="nav__home">
+            <img src="assets/iconos/Home.png" alt="home">
+            <span>Home</span>
+        </a>
+        <img src="assets/iconos/carrito.png" alt="carrito" id="carrito">
+        <img src="assets/iconos/user.svg" alt="user">
+    </div>
+
+    <div class="carrito">
+        <h2>Tus productos</h2>
+
+        <div class="carrito-container"></div>
+
+        <span class="divicion"></span>
+
+        <div class="cart-total">
+          <p>Total:</p>
+          <span class="total">$0.00</span>
+        </div>
+        <button class="btn-comprar">Comprar</button>
+        <button class="btn-vaciarcarrito">Vaciar carrito</button>
+      </div>
+
+ </nav>
+ 
+ <!-- hero -->
+<section class="about-section">
+    <div class="about-content">
+        <h1 class="hero-title">Si tenes Zappi,</h1>
+        <h2 class="hero-title2">tenes Nucba.</h2>
+        <p>Búsca lo que quieras y nucba te quedes sin comida</p>
+        <a href="#products" class="btn-hero">VER MAS</a>
+    </div>
+    
+    <div class="hero-img">
+        <img src="./Assets/imagenes/pizzas-hero.png" class="title-img" alt="">
+    </div>
+</section>
+
+<!-- Section 'Hoy te recomendamos' -->
+    
+<section class="section">
+    <h3 class="section__subtitulo subtitulo">Hoy te recomendamos</h3> 
+    <div class="section__container">
+
+        <div class="cards">
+            <div class="container__img">
+            <img src="./assets/imagenes/Photo Menu-8.png" alt="" class="pizza">
+            </div>
+            <div class="container__text">         
+            <h3 class="tittle__pizza">Bennazianna</h3>
+            <p class="subtitulo__pizza">La más completa</p>
+            <h2 class="price__pizza">$3650</h2>
+            </div>
+            <div class="container__button">
+            <button class="button button__pizza">Agregar</button>
+            </div> 
+        </div>
+
+        <div class="cards">
+            <img src="./assets/imagenes/Photo Menu-9.png" alt="" class="pizza">
+            <div class="container__text">         
+            <h3 class="tittle__pizza">Tronco-Pizza</h3>
+            <p class="subtitulo__pizza">Para todo el día</p>
+            <h2 class="price__pizza">$870</h2>
+            </div>
+            <button class="button button__pizza">Agregar</button>
+        </div>
+
+        <div class="cards">
+            <div class="container__img">
+            <img src="./assets/imagenes/Photo Menu-10.png" alt="" class="pizza">
+            </div>
+            <div class="container__text">         
+            <h3 class="tittle__pizza">Papas | Provenzal</h3>
+            <p class="subtitulo__pizza">Van como piña</p>
+            <h2 class="price__pizza">$360</h2>
+            </div>
+            <div class="container__button">
+            <button class="button button__pizza">Agregar</button>
+            </div> 
+        </div>
+    </div>
+</section>
+
+    <!-- Section 'Categorias' -->
+
+<section class="section">
+    <h3 class="section__subtitulo categorias">Categorias</h3>
+    <div class="section__container container__categorias">
+
+        <div class="mini-cards">
+            <img src="./assets/imagenes/pizza-small-2.png" alt="" class="iconos">
+            <p class="category active">Populares</p>
+            <span></span>
+        </div>
+
+        <div class="mini-cards">
+            <img src="./Assets/imagenes/pizza-small.png" alt="" class="iconos  pizzasmall">
+            <p class="category" data-category="pizzas">Pizzas</p>
+            <span></span>
+        </div>
+
+        <div class="mini-cards">
+            <img src="./assets/imagenes/burger.png" alt="" class="iconos">
+            <p class="category" data-category="hamburguesas">Hamburguesas</p>
+            <span></span>
+        </div>
+
+        <div class="mini-cards">
+            <img src="./assets/imagenes/fries.png" alt="" class="iconos">
+            <p class="category" data-category="papas">Napapuki</p>
+            <span></span>
+        </div>
+
+        <div class="mini-cards">
+            <img src="./assets/imagenes/buritto.png" alt="" class="iconos">
+            <p class="category" data-category="wraps">Wraps</p>
+            <span></span>
+        </div>
+
+        <div class="mini-cards">
+            <img src="./assets/imagenes/tacos.png" alt="" class="iconos">
+            <p class="category" data-category="mexicanfood">Mexican Food</p>
+            <span></span>
+        </div>
+
+        <div class="mini-cards">
+            <img src="./assets/imagenes/float.png" alt="" class="iconos">
+            <p class="category" data-category="batidos">Batidos</p>
+            <span></span>
+        </div>
+    </div>
+</section>
+
+    <!-- Section 'Los más populares' -->
+
+<section class="section">
+    <h3 class="section__subtitulo subtitulo">Lo más populares</h3>
+
+    <div class="section__container" id="containerProductos">
+
+        <!-- <div class="cards populares">
+            <img src="./assets/imagenes/lamrpit.png" alt="" class="pizza">
+            <div class="container__text left">         
+            <h3 class="tittle__pizza">La Mr. Pit</h3>
+            <p class="subtitulo__pizza">Solo para expertos</p>
+            
+            <div class="container__price__button">
+                <h2 class="price__pizza left">$350</h2>
+                <button class="button button__pizza">Agregar</button>
+            </div>
+        </div>
+        </div>
+
+        <div class="cards populares">
+            <img src="./assets/imagenes/qjamone.png" alt="" class="pizza">
+            <div class="container__text left">         
+            <h3 class="tittle__pizza">¡Q' Jamone!</h3>
+            <p class="subtitulo__pizza">Con jamón crudo</p>
+            
+            <div class="container__price__button">
+                <h2 class="price__pizza left">$350</h2>
+                <button class="button button__pizza">Agregar</button>
+            </div>
+        </div>
+        </div>
+
+        <div class="cards populares">
+            <img src="./assets/imagenes/lacharlygarcia.png" alt="" class="pizza">
+            <div class="container__text left">         
+            <h3 class="tittle__pizza">La Charly García</h3>
+            <p class="subtitulo__pizza">¡BASTA!</p>
+            
+            <div class="container__price__button">
+                <h2 class="price__pizza left">$380</h2>
+                <button class="button button__pizza">Agregar</button>
+            </div>
+        </div>
+        </div>
+
+        <div class="cards populares">
+            <img src="./assets/imagenes/lamaradona.png" alt="" class="pizza">
+            <div class="container__text left">         
+            <h3 class="tittle__pizza">La Maradona</h3>
+            <p class="subtitulo__pizza">¡Eterna!</p>
+            
+            <div class="container__price__button">
+                <h2 class="price__pizza left">$450</h2>
+                <button class="button button__pizza">Agregar</button>
+            </div>
+        </div>
+        </div>
+
+        <div class="cards populares">
+            <img src="./assets/imagenes/picantovich.png" alt="" class="pizza">
+            <div class="container__text left">         
+            <h3 class="tittle__pizza">Picantovich</h3>
+            <p class="subtitulo__pizza">Pica dos veces</p>
+            
+            <div class="container__price__button">
+                <h2 class="price__pizza left">$750</h2>
+                <button class="button button__pizza">Agregar</button>
+            </div>
+        </div>
+        </div>
+
+        <div class="cards populares">
+            <img src="./assets/imagenes/lahasbulla.png" alt="" class="pizza">
+            <div class="container__text left">         
+            <h3 class="tittle__pizza">La Hasbulla</h3>
+            <p class="subtitulo__pizza">En honor al 1</p>
+            
+            <div class="container__price__button">
+                <h2 class="price__pizza left">$990</h2>
+                <button class="button button__pizza">Agregar</button>
+            </div>
+        </div>
+        </div>
+
+        <div class="cards populares">
+            <img src="./assets/imagenes/leomessi.png" alt="" class="pizza">
+            <div class="container__text left">         
+            <h3 class="tittle__pizza">Leo Messi</h3>
+            <p class="subtitulo__pizza">¡De pie señores!</p>
+            
+            <div class="container__price__button">
+                <h2 class="price__pizza left">$10</h2>
+                <button class="button button__pizza">Agregar</button>
+            </div>
+        </div>
+        </div>
+
+        <div class="cards populares">
+            <img src="./assets/imagenes/nickgi.png" alt="" class="pizza">
+            <div class="container__text left">         
+            <h3 class="tittle__pizza">Nick Gi</h3>
+            <p class="subtitulo__pizza">La que desaparece</p>
+            
+            <div class="container__price__button">
+                <h2 class="price__pizza left">$Gratis</h2>
+                <button class="button button__pizza">Agregar</button>
+            </div>
+        </div>
+        </div>
+ -->
+
+    </div>
+    <button class="btn-vermas">Ver más</button>
+</section>
+
+    <!-- Footer, al fin -->
+    <footer class="footer">
+        <div class="section__container">
+            <p class="text__footer">Términos de Uso</p>
+            <p class="text__footer">Trabajá con Nosotros</p>
+            <p class="text__footer">Soporte</p>
+        </div>
+            <p class="text__footer weight-font">Codeado con ❤️ por <span> Ghosteados Group ®</span></p> 
+    </footer>
+    <div class="add-modal"></div>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
