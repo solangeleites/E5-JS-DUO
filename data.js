@@ -5,7 +5,7 @@ const productos = [
       description: 'Solo para expertos',
       price: '350',
       category: 'pizzas',
-      image: './Assets/imagenes/lamrpit.png',
+      image: '/assets/imagenes/lamrpit.png',
     },
     {
       id: 2,
@@ -13,7 +13,7 @@ const productos = [
       description: 'Con jamón crudo',
       price: '350',
       category: 'pizzas',
-      image: './Assets/imagenes/qjamone.png',
+      image: '/assets/imagenes/qjamone.png',
     },
     {
       id: 3,
@@ -21,7 +21,7 @@ const productos = [
       description: '¡BASTA!',
       price: '380',
       category: 'pizzas',
-      image: './Assets/imagenes/lacharlygarcia.png',
+      image: '/assets/imagenes/lacharlygarcia.png',
     },
     {
       id: 4,
@@ -29,7 +29,7 @@ const productos = [
       description: '¡Eterna!',
       price: '450',
       category: 'pizzas',
-      image: './Assets/imagenes/lamaradona.png',
+      image: '/assets/imagenes/lamaradona.png',
     },
     {
       id: 5,
@@ -37,7 +37,7 @@ const productos = [
       description: 'Pica dos veces',
       price: '750',
       category: 'pizzas',
-      image: './Assets/imagenes/picantovich.png',
+      image: '/assets/imagenes/picantovich.png',
     },
     {
       id: 6,
@@ -45,7 +45,7 @@ const productos = [
       description: 'En honor al 1',
       price: '990',
       category: 'pizzas',
-      image: './Assets/imagenes/lahasbulla.png',
+      image: '/assets/imagenes/lahasbulla.png',
     },
     {
       id: 7,
@@ -53,7 +53,7 @@ const productos = [
       description: '¡De pie señores!',
       price: '10',
       category: 'pizzas',
-      image: './Assets/imagenes/leomessi.png',
+      image: '/assets/imagenes/leomessi.png',
     },
     {
       id: 8,
@@ -61,7 +61,7 @@ const productos = [
       description: 'La que desaparece',
       price: 'Gratis',
       category: 'pizzas',
-      image: './Assets/imagenes/nickgi.png',
+      image: '/assets/imagenes/nickgi.png',
     },
     {
       id: 9,
@@ -69,7 +69,7 @@ const productos = [
       description: 'Una bomba',
       price: '750',
       category: 'hamburguesas',
-      image: './Assets/imagenes/hamburguesa.jpg',
+      image: '/assets/imagenes/hamburguesa.jpg',
     },
     {
       id: 10,
@@ -77,7 +77,7 @@ const productos = [
       description: 'Una con 10 patys',
       price: '1550',
       category: 'hamburguesas',
-      image: './Assets/imagenes/hamburguesa.jpg',
+      image: '/assets/imagenes/hamburguesa.jpg',
     },
     {
       id: 11,
@@ -85,7 +85,7 @@ const productos = [
       description: 'con mucho tomate',
       price: '550',
       category: 'hamburguesas',
-      image: './Assets/imagenes/hamburguesa.jpg',
+      image: '/assets/imagenes/hamburguesa.jpg',
     },
     {
       id: 12,
@@ -93,7 +93,7 @@ const productos = [
       description: 'Hecha en 4:20 minutos',
       price: '350',
       category: 'hamburguesas',
-      image: './Assets/imagenes/hamburguesa.jpg',
+      image: '/assets/imagenes/hamburguesa.jpg',
     },
     {
       id: 13,
@@ -101,7 +101,7 @@ const productos = [
       description: 'Básicas',
       price: '450',
       category: 'papas',
-      image: './Assets/imagenes/papasfritas.jpg',
+      image: '/assets/imagenes/papasfritas.jpg',
     },
     {
       id: 14,
@@ -109,7 +109,7 @@ const productos = [
       description: 'Bacon, Barbacoa y Barata',
       price: '150',
       category: 'papas',
-      image: './Assets/imagenes/papasfritas.jpg',
+      image: '/assets/imagenes/papasfritas.jpg',
     },
     {
       id: 15,
@@ -117,7 +117,7 @@ const productos = [
       description: 'Con mucho cheddar',
       price: '600',
       category: 'papas',
-      image: './Assets/imagenes/papasfritas.jpg',
+      image: '/assets/imagenes/papasfritas.jpg',
     },
     {
       id: 16,
@@ -125,7 +125,7 @@ const productos = [
       description: 'La cosa sana',
       price: '710',
       category: 'papas',
-      image: './Assets/imagenes/papasfritas.jpg',
+      image: '/assets/imagenes/papasfritas.jpg',
     },
     {
       id: 17,
@@ -133,7 +133,7 @@ const productos = [
       description: 'Picantovich',
       price: '710',
       category: 'wraps',
-      image: './Assets/imagenes/wraps.jpg',
+      image: '/assets/imagenes/wraps.jpg',
     },
     {
       id: 18,
@@ -141,7 +141,7 @@ const productos = [
       description: 'Le mandamos ananá porque pintó',
       price: '530',
       category: 'wraps',
-      image: './Assets/imagenes/wraps.jpg',
+      image: '/assets/imagenes/wraps.jpg',
     },
     {
       id: 19,
@@ -149,7 +149,7 @@ const productos = [
       description: 'No hace falta el boldo después',
       price: '670',
       category: 'wraps',
-      image: './Assets/imagenes/wraps.jpg',
+      image: '/assets/imagenes/wraps.jpg',
     },
     {
       id: 20,
@@ -157,7 +157,7 @@ const productos = [
       description: 'Te dejamos que elijas los ingredientes',
       price: '710',
       category: 'wraps',
-      image: './Assets/imagenes/wraps.jpg',
+      image: '/assets/imagenes/wraps.jpg',
     },
     {
       id: 21,
@@ -165,7 +165,7 @@ const productos = [
       description: 'Con arandanos, avena y leche de almendras',
       price: '400',
       category: 'batidos',
-      image: './Assets/imagenes/batidos.jpg',
+      image: '/assets/imagenes/batidos.jpg',
     },
     {
       id: 22,
@@ -173,7 +173,7 @@ const productos = [
       description: 'Con frutilla',
       price: '600',
       category: 'batidos',
-      image: './Assets/imagenes/batidos.jpg',
+      image: './assets/imagenes/batidos.jpg',
     },
     {
       id: 23,
@@ -189,7 +189,7 @@ const productos = [
       description: 'Kiwi, apio y menta',
       price: '450',
       category: 'batidos',
-      image: './Assets/imagenes/batidos.jpg',
+      image: '/assets/imagenes/batidos.jpg',
     },
   ];
   // console.log(productos)
