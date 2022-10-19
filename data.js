@@ -181,7 +181,7 @@ const productos = [
       description: 'Con kiwi y leche de mani',
       price: '550',
       category: 'batidos',
-      image: './Assets/imagenes/batidos.jpg',
+      image: '/assets/imagenes/batidos.jpg',
     },
     {
       id: 24,
