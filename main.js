@@ -71,8 +71,9 @@ const renderProductosDivididos = (index = 0) => {
 // Luego le decimos al contenedor de productos que nos cambie el html por la variable que guardamos que es la de los productos filtrados. Uso el map para recorrer el array y le paso la funcion renderProducto para que me devuelva el html de cada producto. Y le agrego el join para que me quite las comas.
 
 const renderDeProductosFiltrados = category => {
-    const listaDeProductos = productos.filter(producto => producto.category === category);
-    $containerProductos.innerHTML = listaDeProductos.map(renderProducto).join('');
+    const listaDeProductos = productos.filter(producto =>  producto.category === category);
+    if(!listaDeProductos.length) $containerProductos.innerHTML = `No Hay Stock`
+    else $containerProductos.innerHTML = listaDeProductos.map(renderProducto).join('');
 }
 
 
