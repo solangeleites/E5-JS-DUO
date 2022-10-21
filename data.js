@@ -13,6 +13,7 @@ const productos = [
       description: 'Con jamón crudo',
       price: '350',
       category: 'pizzas',
+      popular: true,
       image: '/assets/imagenes/qjamone.png',
     },
     {
@@ -69,6 +70,7 @@ const productos = [
       description: 'Una bomba',
       price: '750',
       category: 'hamburguesas',
+      popular: true,
       image: '/assets/imagenes/hamburguesa.jpg',
     },
     {
@@ -107,8 +109,9 @@ const productos = [
       id: 14,
       name: 'La triple B',
       description: 'Bacon, Barbacoa y Barata',
-      price: '150',
+      price: '850',
       category: 'papas',
+      popular: true,
       image: '/assets/imagenes/papasfritas.jpg',
     },
     {
@@ -133,6 +136,7 @@ const productos = [
       description: 'Picantovich',
       price: '710',
       category: 'wraps',
+      popular: true,
       image: '/assets/imagenes/wraps.jpg',
     },
     {

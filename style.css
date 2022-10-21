@@ -100,17 +100,64 @@ body{
     min-width: 300px;
     transform: translate(200%);
     transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
-    display: none;
 }
   .carrito-container {
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
     gap: 20px;
   }
   .divicion {
     margin-top: 20px;
     border: 0.5px solid var(--grey);
     width: 100%;
+  }
+  .carrito-item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .cantidades{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+  .imagen-carrito{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .sumar__btn, .restar__btn{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: var(--crimson-light);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .sumar__cantidad{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--grey);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
   }
 
 /* ?media query del nav */
@@ -460,4 +507,12 @@ body{
         max-width: 280px;
         gap: 10px;
     }
+}
+small{
+    font-size: 30px;
+    font-weight: 800;
+    color:var(--white);
+    background-color: var(--crimson-light);
+    border-radius: 6px;
+    padding: 3px;
 }

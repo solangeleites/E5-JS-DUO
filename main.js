@@ -72,7 +72,7 @@ const renderProductosDivididos = (index = 0) => {
 
 const renderDeProductosFiltrados = category => {
     const listaDeProductos = productos.filter(producto =>  producto.category === category);
-    if(!listaDeProductos.length) $containerProductos.innerHTML = `No Hay Stock`
+    if(!listaDeProductos.length) $containerProductos.innerHTML = `<small>Lo sentimos, actualmente no tenemos stock.</small>`
     else $containerProductos.innerHTML = listaDeProductos.map(renderProducto).join('');
 }
 
