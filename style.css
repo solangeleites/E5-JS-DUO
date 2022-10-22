@@ -347,8 +347,15 @@ body{
     align-items: baseline;
     justify-content:center;
     gap: 15px;
+} 
+
+.category:focus {
+    background: var(--grey);
+    border-radius: 6px;
+    padding: 5px;
 }
-.category{
+
+.category {
     font-size: 17px;
     font-weight: 500;
     color: var(--white);

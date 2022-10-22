@@ -13,7 +13,6 @@ const productos = [
       description: 'Con jamón crudo',
       price: '350',
       category: 'pizzas',
-      popular: true,
       image: '/assets/imagenes/qjamone.png',
     },
     {
@@ -22,6 +21,7 @@ const productos = [
       description: '¡BASTA!',
       price: '380',
       category: 'pizzas',
+      popular: true,
       image: '/assets/imagenes/lacharlygarcia.png',
     },
     {
@@ -70,7 +70,6 @@ const productos = [
       description: 'Una bomba',
       price: '750',
       category: 'hamburguesas',
-      popular: true,
       image: '/assets/imagenes/hamburguesa.jpg',
     },
     {
@@ -79,6 +78,7 @@ const productos = [
       description: 'Una con 10 patys',
       price: '1550',
       category: 'hamburguesas',
+      popular: true,
       image: '/assets/imagenes/hamburguesa.jpg',
     },
     {
@@ -111,7 +111,6 @@ const productos = [
       description: 'Bacon, Barbacoa y Barata',
       price: '850',
       category: 'papas',
-      popular: true,
       image: '/assets/imagenes/papasfritas.jpg',
     },
     {
@@ -120,6 +119,7 @@ const productos = [
       description: 'Con mucho cheddar',
       price: '600',
       category: 'papas',
+      popular: true,
       image: '/assets/imagenes/papasfritas.jpg',
     },
     {
@@ -136,7 +136,6 @@ const productos = [
       description: 'Picantovich',
       price: '710',
       category: 'wraps',
-      popular: true,
       image: '/assets/imagenes/wraps.jpg',
     },
     {

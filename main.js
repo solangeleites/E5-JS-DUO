@@ -110,9 +110,9 @@ const cambiarEstadoBtnVerMas = (categoriaSeleccionada) => {
 // Y chan chan, funca 🤍
 
 const botonActivado = (categoriaSeleccionada) => {
-    const $containerCategorias = [... $listaDeCategorias]
+    const containerCategorias = [... $listaDeCategorias]
 
-    $containerCategorias.forEach((categoria) => {
+    containerCategorias.forEach((categoria) => {
         if(categoria.dataset.category !== categoriaSeleccionada){
             categoria.classList.remove('active')
             return;
@@ -129,26 +129,53 @@ const botonActivado = (categoriaSeleccionada) => {
 const cambiarCatSeleccionada = (e) => {
     const categoriaSeleccionada = e.target.dataset.category;
     botonActivado(categoriaSeleccionada);
-    cambiarEstadoBtnVerMas(categoriaSeleccionada);
+    // cambiarEstadoBtnVerMas(categoriaSeleccionada);
 }
 
 // Cuarto realizamos la logica de los filtros
 // Sí, lo que estas clickeando no contiene la clase 'category' no hagas nada,(return)
 // Si no vamos a ejecutar una funcion, vamos al paso quinto, luego volvemos.
 
+
+
+const createHTMLrenderPopulares = array => {
+    const { name, description,price,image} = array; return `<div class="cards populares">
+    <img src="${image}" alt="" class="pizza">
+    <div class="container__text left">         
+    <h3 class="tittle__pizza">${name}</h3>
+    <p class="subtitulo__pizza">${description}</p>
+    
+    <div class="container__price__button">
+        <h2 class="price__pizza left">$ ${price}</h2>
+        <button class="button button__pizza">Agregar</button>
+    </div>
+</div>
+</div>`
+}
+
+const renderPopular = (array) => {
+    const arrayRecommend = array.sort(() => Math.random() -0.5).slice(0 , 4)
+    $containerProductos.innerHTML = array.map(producto => createHTMLrenderPopulares(producto)).join(' ')
+} 
+
+
 const aplicarFiltro = (e) => {
-    if(!e.target.classList.contains('category')) return;
-    cambiarCatSeleccionada(e)
+    if(!e.target.classList.contains('category')){return};
+    
     if(!e.target.dataset.category){
         $containerProductos.innerHTML = "";
         renderTodosLosProductos();
     }else {
         renderTodosLosProductos(0, e.target.dataset.category)
     }
+    
+    if(!e.target.classList.contains('active')){return};
+    
+    let arrayNuevo = productos.filter(producto => producto.popular === true)
+    renderPopular(arrayNuevo);
+
+    cambiarCatSeleccionada(e)
 }
-
-
-
 
 
 // Funcion inicializadora
