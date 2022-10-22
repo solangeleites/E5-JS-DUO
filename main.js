@@ -5,12 +5,13 @@ const $containerProductos = d.getElementById('containerProductos')
 const $containerCategorias = d.querySelector('.container__categorias')
 const $listaDeCategorias = d.querySelectorAll('.category')
 // para el carrito hay que traernos: 
-const $carritoContainer = d.getElementsByClassName('carrito-container')
+const $carritoContainer = d.querySelector('.carrito-container')
 const $carritoMenu = d.getElementsByClassName('carrito')
 const $total = d.getElementsByClassName('total')
 const $comprar = d.getElementsByClassName('btn-comprar')
 const $vaciarCarrito = d.getElementsByClassName('btn-vaciarcarrito')
 const $carrito = d.getElementById('carrito');
+const $totalCarrito = d.querySelector('.total-carrito')
 // boton de ver más
 const $verMas = d.getElementsByClassName('btn-vermas')
 // modal
@@ -22,7 +23,79 @@ let carrito = JSON.parse(localStorage.getItem('carrito'))  || [];
 const saveLS = listaDeCarrito => {
     localStorage.setItem('carrito', JSON.stringify(listaDeCarrito))
 }
-//! ------------------------------------------------------------------------------------
+//! ------------------------------------------------------------------------------------ 
+// creamos la funcion para agregar prodcutos al carrito
+const agregarAlCarrito = (idProducto) => {
+    let productoAgregado = productos.find(f => f.id === idProducto)
+    if(!productoAgregado.cantidadCarrito) productoAgregado.cantidadCarrito = 0
+    if(carrito.some(f => f.id === idProducto)) {
+        productoAgregado.cantidadCarrito ++
+    } else {
+        carrito.push(productoAgregado)
+        productoAgregado.cantidadCarrito = 1
+    }
+    renderCarrito();
+} 
+// funcion para vaciar carrito
+const vaciarCarrito = () => {
+    carrito = [];
+    renderCarrito();
+}
+
+// funcion para sumar en el carrito
+const sumarCarrito = (idProducto) => {
+    let productoSumado = productos.find(f => f.id === idProducto)
+    productoSumado.cantidadCarrito ++
+    renderCarrito();
+}
+
+const restarCarrito = (idProducto) => {
+    let productoRestado = productos.find(f => f.id === idProducto)
+    if(productoRestado.cantidadCarrito <= 1) {
+        carrito = carrito.filter(i => i.id !== idProducto)
+    } else {
+        productoRestado.cantidadCarrito --
+    }
+    renderCarrito();
+} 
+
+const calcularTotal = () => {
+    let total = 0 
+    carrito.forEach(producto => {
+        let totalProducto = producto.price * producto.cantidadCarrito;
+        total += totalProducto
+    });
+    return total;
+}
+
+// renderizamos el carrito
+const renderCarrito = () => {
+    let contenidoCarrito = carrito.map(item => {
+        const {id, name, price, image, cantidadCarrito} = item
+        return `<div class="carrito-item">
+            <div class="imagen-carrito">
+                <img src="${image}" alt="${name}">
+            </div>
+            <div class="row">
+                <div class="carrito-item__info">
+                    <h3>${name}</h3>
+                    <p>${price}</p>
+                </div>
+            </div>
+            <div class="cantidades">
+                <div class="sumar">
+                    <button class="sumar__btn" onclick="sumarCarrito(${id})">+</button>
+                </div>
+                <p class="sumar__cantidad">${cantidadCarrito}</p>
+                <div class="restar">
+                    <button class="restar__btn" onclick="restarCarrito(${id})">-</button>
+            </div>
+        </div>`
+    }).join(' ');
+    $carritoContainer.innerHTML = contenidoCarrito;
+    $totalCarrito.textContent = `$${calcularTotal()}`
+
+}
 
 // Tercero creamos la función para el renderizado de los productos del array
 const renderProducto = producto => {
@@ -37,11 +110,12 @@ const renderProducto = producto => {
 
                             <div class="container__price__button">
                                 <h2 class="price__pizza left"> $ ${price}</h2>
-                                <button class="button button__pizza" <button class="btn-add"
+                                <button class="button button__pizza btn-add"
                                 data-id='${id}'
                                 data-name='${name}'
                                 data-bid='${price}'
-                                data-img='${image}'>Agregar</button>
+                                data-img='${image}'
+                                onclick="agregarAlCarrito(${id})">Agregar</button>
                             </div>
                     </div>
                 </div>
@@ -136,26 +210,9 @@ const cambiarCatSeleccionada = (e) => {
 // Sí, lo que estas clickeando no contiene la clase 'category' no hagas nada,(return)
 // Si no vamos a ejecutar una funcion, vamos al paso quinto, luego volvemos.
 
-
-
-const createHTMLrenderPopulares = array => {
-    const { name, description,price,image} = array; return `<div class="cards populares">
-    <img src="${image}" alt="" class="pizza">
-    <div class="container__text left">         
-    <h3 class="tittle__pizza">${name}</h3>
-    <p class="subtitulo__pizza">${description}</p>
-    
-    <div class="container__price__button">
-        <h2 class="price__pizza left">$ ${price}</h2>
-        <button class="button button__pizza">Agregar</button>
-    </div>
-</div>
-</div>`
-}
-
 const renderPopular = (array) => {
     const arrayRecommend = array.sort(() => Math.random() -0.5).slice(0 , 4)
-    $containerProductos.innerHTML = array.map(producto => createHTMLrenderPopulares(producto)).join(' ')
+    $containerProductos.innerHTML = array.map(producto => renderProducto(producto)).join(' ')
 } 
 
 
@@ -175,7 +232,6 @@ const aplicarFiltro = (e) => {
     }
     cambiarCatSeleccionada(e)
 }
-
 
 // Funcion inicializadora
 const init = () => {
