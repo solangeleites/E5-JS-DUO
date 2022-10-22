@@ -82,7 +82,7 @@ const renderDeProductosFiltrados = category => {
 // Le paso como parametro el index de 0 y otro parametro que va a ser la categoria undefined por defecto.
 // Le decimos con el if si no tenes categoria, renderizame los productos divididos. 
 //! No renderizaba porque habia puesto el return despues de la llave.
-const renderTodosLosProductos = (index = 0, category = undefined) => {
+const renderTodosLosProductos = (index = 0, category = undefined ) => {
     if(!category){
         renderProductosDivididos(index);
         return;
@@ -110,9 +110,9 @@ const cambiarEstadoBtnVerMas = (categoriaSeleccionada) => {
 // Y chan chan, funca 🤍
 
 const botonActivado = (categoriaSeleccionada) => {
-    const containerCategorias = [... $listaDeCategorias]
+    const $containerCategorias = [... $listaDeCategorias]
 
-    containerCategorias.forEach((categoria) => {
+    $containerCategorias.forEach((categoria) => {
         if(categoria.dataset.category !== categoriaSeleccionada){
             categoria.classList.remove('active')
             return;
@@ -129,7 +129,7 @@ const botonActivado = (categoriaSeleccionada) => {
 const cambiarCatSeleccionada = (e) => {
     const categoriaSeleccionada = e.target.dataset.category;
     botonActivado(categoriaSeleccionada);
-    // cambiarEstadoBtnVerMas(categoriaSeleccionada);
+    cambiarEstadoBtnVerMas(categoriaSeleccionada);
 }
 
 // Cuarto realizamos la logica de los filtros
@@ -160,20 +160,19 @@ const renderPopular = (array) => {
 
 
 const aplicarFiltro = (e) => {
-    if(!e.target.classList.contains('category')){return};
+    console.log(e.target.dataset.category)
     
-    if(!e.target.dataset.category){
+    if(!e.target.classList.contains('category')){
+        return;
+    } else if(!e.target.dataset.category){
         $containerProductos.innerHTML = "";
         renderTodosLosProductos();
-    }else {
+    }else if(e.target.dataset.category === 'popular'){
+        let arrayNuevo = productos.filter(producto => producto.popular === true)
+        renderPopular(arrayNuevo);
+    } else {
         renderTodosLosProductos(0, e.target.dataset.category)
     }
-    
-    if(!e.target.classList.contains('active')){return};
-    
-    let arrayNuevo = productos.filter(producto => producto.popular === true)
-    renderPopular(arrayNuevo);
-
     cambiarCatSeleccionada(e)
 }
 
@@ -182,6 +181,5 @@ const aplicarFiltro = (e) => {
 const init = () => {
     renderTodosLosProductos();
     $containerCategorias.addEventListener('click', aplicarFiltro)
-
 }
 init();
