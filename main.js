@@ -12,10 +12,7 @@ const $comprar = d.getElementsByClassName('btn-comprar')
 const $vaciarCarrito = d.getElementsByClassName('btn-vaciarcarrito')
 const $carrito = d.getElementById('carrito');
 const $totalCarrito = d.querySelector('.total-carrito')
-// boton de ver más
-const $verMas = d.getElementsByClassName('btn-vermas')
-// modal
-const $modal = d.getElementsByClassName('add-modal');
+
 //! ------------------------------------------------------------------------------------
 // Vamos a setear el array para el carrito
 let carrito = JSON.parse(localStorage.getItem('carrito'))  || [];
@@ -24,6 +21,8 @@ const saveLS = listaDeCarrito => {
     localStorage.setItem('carrito', JSON.stringify(listaDeCarrito))
 }
 //! ------------------------------------------------------------------------------------ 
+
+
 // creamos la funcion para agregar prodcutos al carrito
 const agregarAlCarrito = (idProducto) => {
     let productoAgregado = productos.find(f => f.id === idProducto)
@@ -168,13 +167,13 @@ const renderTodosLosProductos = (index = 0, category = undefined ) => {
 // Esta funcion va a recibir como parametro una categoria
 //Y le vamos a decir que si no tiene categoria (el parametro que le pasamos) que se muestre el boton de ver mas.
 
-const cambiarEstadoBtnVerMas = (categoriaSeleccionada) => {
-    if(!categoriaSeleccionada){
-        $verMas[0].style.display = 'block';
-        return;
-    }
-    $verMas[0].style.display = 'none';
-}
+// const cambiarEstadoBtnVerMas = (categoriaSeleccionada) => {
+//     if(!categoriaSeleccionada){
+//         $verMas[0].style.display = 'block';
+//         return;
+//     }
+//     $verMas[0].style.display = 'none';
+// }
 
 
 // Sexto vamos a crear la funcion que le va a cambiar el colorcito de fondo cuando  tengamos seleccionada una categoria.
@@ -237,5 +236,6 @@ const aplicarFiltro = (e) => {
 const init = () => {
     renderTodosLosProductos();
     $containerCategorias.addEventListener('click', aplicarFiltro)
+    // $comprar.addEventListener('click', comprarProducto)
 }
 init();

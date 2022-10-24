@@ -91,7 +91,7 @@ body{
     padding: 50px 30px;
     background: linear-gradient(to top, #121e3c, var(--background));
     border-left: 1px solid var(--nav-bg);
-    display: flex;
+    display:flex;
     flex-direction: column;
     gap: 30px;
     height: calc(100vh - 65px);
@@ -105,6 +105,9 @@ body{
     display: flex;
     flex-direction:column;
     gap: 20px;
+  }
+  .carrito::-webkit-scrollbar{
+    display: none;
   }
   .divicion {
     margin-top: 20px;
@@ -458,19 +461,7 @@ body{
     text-align: left;
     width: 80%;
 }
-.btn-vermas{
-    height: 50px;
-    width: 100px;
-    font-family: var(--font);
-    font-weight: 500;
-    border-radius: 30px;
-    background: var(--linear-gradient);
-    color: var(--white);
-    cursor: pointer;
-    margin: 0 auto;
-    margin-top: 40px;
-    border: none;
-}
+
  /**Termino section 'Las más populares' */
 
   /**Arranco el querido footer */
